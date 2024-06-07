@@ -1,0 +1,13 @@
+{
+  "node-option": [
+    "experimental-specifier-resolution=node",
+    "loader=ts-node/esm"
+  ],
+  "ignore": [
+    "apps",
+    "node_modules"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

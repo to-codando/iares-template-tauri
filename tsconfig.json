@@ -1,0 +1,76 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": "./",
+    "declarationDir": "./dist",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "paths": {
+      "@/store": [
+        "src/store/index.ts"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
+      ],
+      "@/services/*": [
+        "src/services/*"
+      ],
+      "@/assets/*": [
+        "src/public/assets/*"
+      ],
+      "@/tests/*": [
+        "src/tests/*"
+      ],
+      "@/mock/*": [
+        "src/mock/*"
+      ]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
+    "noEmitOnError": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "inlineSources": true
+  },
+  "typeRoots": [
+    "./node_modules/@types",
+    "declarations.d.ts"
+  ],
+  "types": [
+    "node",
+    "mocha",
+    "chai"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "config",
+    "public",
+    "api",
+    ".vscode"
+  ],
+  "include": [
+    "src"
+  ]
+}
+

@@ -1,0 +1,92 @@
+{
+  "name": "iares-tauri",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri",
+    "lint": "standard --fix ./src/**/*.ts --verbose | snazzy",
+    "build": "node --env-file=.env.prod ./build.js",
+    "dev": "pnpm run start:dev",
+    "test": "mocha ./dist/**/*.spec.js",
+    "test:watch": "pnpm run test && pnpm run test:watcher",
+    "test:coverage": "pnpm run coverage:build && c8 --reporter=text --reporter=lcov  mocha  ./dist/tests/**",
+    "coverage:build": "node  --env-file=.env.spec ./build.js",
+    "start:dev": "node --env-file=.env.dev ./build.js && pnpm run lint",
+    "start:prod": "cd ./dist && npx http-server",
+    "api:mock": "json-server --watch api/db.json",
+    "test:watcher": "run-when-changed --watch './dist/**/*.js' --exec 'mocha  ./dist/**/*.spec.js %s'",
+    "remote": "pnpm http-server -p 4000 -d ./dist"
+  },
+    "ts-standard": {
+    "project": "./tsconfig.json"
+  },  
+  "aliases": {
+    "@/store": [
+      "./dist/store/index.ts"
+    ],
+    "@/components/*": [
+      "./dist/components"
+    ],
+    "@/utils/*": [
+      "./dist/utils"
+    ],
+    "@/services/*": [
+      "./dist/services"
+    ],
+    "@/assets/*": [
+      "./dist/assets"
+    ],
+    "@/mock/*": [
+      "./dist/mock"
+    ],
+    "@/tests/*": [
+      "./dist/tests"
+    ]
+  },
+    "nyc": {
+    "extension": [
+      ".ts"
+    ]
+  },
+  "dependencies": {
+    "@tauri-apps/api": ">=2.0.0-beta.0",
+    "@tauri-apps/plugin-shell": ">=2.0.0-beta.0",
+    "fam-code-ui": "^0.0.10",
+    "htm": "^3.1.1",
+    "iares": "^1.1.14"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": ">=2.0.0-beta.0",
+    "@esm-bundle/chai": "4.3.4-fix.0",
+    "@types/chai": "^4.3.16",
+    "@types/jsdom": "^21.1.6",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^18.19.33",
+    "biome": "^0.3.3",
+    "c8": "^7.14.0",
+    "chai": "^4.4.1",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.17.19",
+    "esbuild-copy-static-files": "^0.1.0",
+    "esbuild-plugin-d-ts-path-alias": "^4.2.0",
+    "esbuild-plugin-dev-server": "^4.0.0",
+    "esbuild-plugin-path-alias": "^1.0.7",
+    "glob": "^9.3.5",
+    "global-jsdom": "^8.8.0",
+    "http-server": "^14.1.1",
+    "install-peerdeps": "^3.0.3",
+    "jsdom": "^21.1.2",
+    "json-server": "^0.17.4",
+    "mocha": "^10.4.0",
+    "module-alias": "^2.2.3",
+    "prettier": "^3.2.5",
+    "run-when-changed": "^2.1.0",
+    "shx": "^0.3.4",
+    "snazzy": "^9.0.0",
+    "standard": "^17.1.0",
+    "stylint": "^2.0.0",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.4.5"
+  }
+}

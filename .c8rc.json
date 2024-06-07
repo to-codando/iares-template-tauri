@@ -1,0 +1,26 @@
+{
+  "lines": 95,
+  "functions": 95,
+  "branches": 95,
+  "statements": 95,
+  "cache": false,
+  "source-map": true,
+  "produce-source-map": true,
+  "check-coverage": true,
+  "report-dir": "./coverage",
+  "all": true,
+  "src": [
+    "../bem-perfeito/"
+  ],
+  "exclude-after-remap": true,
+  "include": [
+    "src/components/",
+    "src/store/",
+    "src/utils/"
+  ],
+  "exclude": [
+    "src/store/**/types.ts",
+    "src/components/**/types.ts",
+    "src/components/**/*.js"
+  ]
+}
